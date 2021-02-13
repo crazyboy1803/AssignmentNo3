@@ -61,7 +61,7 @@ public class PrimeNumberLinked
             Node2 current;
             for (current=Start;current!=null;current=current.next)
             {
-                System.out.print(" "+current.data);
+                System.out.print(current.data+" ");
             }
         }
     }
