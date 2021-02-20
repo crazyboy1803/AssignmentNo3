@@ -36,7 +36,7 @@ public class EvenNumberLinked
                 current.next=newnode;
             }
             System.out.println("Value Enetered");  
-            }
+        }
         else
         {
             System.out.println("Value is not even.....Try Again");
