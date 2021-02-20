@@ -46,7 +46,7 @@ public class InsertSpecifiedValue
         }
         else
         {
-            System.out.println("Enter Value where you want to add next value");
+            System.out.println("Enter Value from where you want to add after/before value");
             Scanner sc3 = new Scanner(System.in);
             int sea = sc3.nextInt();
             
@@ -62,25 +62,44 @@ public class InsertSpecifiedValue
             }
             if(count>0)
                 {
-                    System.out.println("Enter Data");
-                    Scanner sc2 = new Scanner(System.in);
-                    int item = sc2.nextInt();
+                    System.out.println("press 1 for after add");
+                    System.out.println("press 2 for before add");
+                    int ch=sc3.nextInt();
+                    if(ch==1)
+                    {
+                        System.out.println("Enter Data");
+                        Scanner sc2 = new Scanner(System.in);
+                        int item = sc2.nextInt();
         
-                    Nodee newnode = new Nodee();
-                    newnode.data = item;
-                    newnode.previous=current;
-                    newnode.next=current.next;
-                    current.next.previous = newnode;
-                    current.next=newnode;                             
+                        Nodee newnode = new Nodee();
+                        newnode.data = item;
+                        newnode.previous=current;
+                        newnode.next=current.next;
+                        current.next.previous = newnode;
+                        current.next=newnode;                             
                     
+                    }
+                    else if(ch==2)
+                    {
+                        System.out.println("Enter Data");
+                        Scanner sc2 = new Scanner(System.in);
+                        int item = sc2.nextInt();
+        
+                        Nodee newnode = new Nodee();
+                        newnode.data = item;
+                        newnode.previous=current.previous;
+                        newnode.next=current;
+                        current.previous.next = newnode;
+                        current.previous=newnode;                             
+                    
+                    }  
+                    System.out.println("Data Entered");
                 }
                 else
                 {
                     System.out.println("Not Found");
                 }
-        }
-        //loop
-        
+        }        
     }
     void deletenode()
     {
@@ -266,7 +285,7 @@ public class InsertSpecifiedValue
         while(true)
         {
             System.out.println("\npress 1 for insert");
-            System.out.println("press 2 for insert next to specified value");
+            System.out.println("press 2 for insert after/before to specified value");
             System.out.println("press 3 for delete");
             System.out.println("press 4 for deleteFromLast");
             System.out.println("press 5 for deleteFromValue");
