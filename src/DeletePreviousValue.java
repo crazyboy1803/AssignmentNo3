@@ -126,30 +126,37 @@ public class DeletePreviousValue
                     //to take the variable current to the node where the value present.
                     current = current.next;            
                 }
-                current = current.previous;
-                // to print deleted value.
-                System.out.println("Delete :"+current.data);
-                //for the first value of linked list.
-                if(current.previous==null && current.next!=null)
+                if(current.previous==null)
                 {
-                    START =current.next;
-                    START.previous = null;
+                    System.out.println("No value found before "+value+" value");
                 }
-                //for the last value of linked list.
-                else if(current.next==null && current.previous!=null)
-                {
-                    current.previous.next = null;
-                }        
-                //for only one value present in linked list.
-                else if(current.next==null && current.previous==null)
-                {
-                    START=null;
-                }
-                //for any middle value.
                 else
                 {
-                    current.previous.next = current.next;
-                    current.next.previous = current.previous;
+                    current = current.previous;
+                    // to print deleted value.
+                    System.out.println("Delete :"+current.data);
+                    //for the first value of linked list.
+                    if(current.previous==null && current.next!=null)
+                    {
+                        START =current.next;
+                        START.previous = null;
+                    }
+                    //for the last value of linked list.
+                    else if(current.next==null && current.previous!=null)
+                    {
+                        current.previous.next = null;
+                    }        
+                    //for only one value present in linked list.
+                    else if(current.next==null && current.previous==null)
+                    {
+                        START=null;
+                    }
+                    //for any middle value.
+                    else
+                    {
+                        current.previous.next = current.next;
+                        current.next.previous = current.previous;
+                    }
                 }
             }
             else
